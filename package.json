@@ -1,0 +1,35 @@
+{
+  "name": "cloninstagram-api",
+  "version": "1.0.0",
+  "description": "ClonInstagram REST API",
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint && ava"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mortem45/ClonInstagram-API.git"
+  },
+  "author": "Brandon Monterrozo <ste45_007@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mortem45/ClonInstagram-API/issues"
+  },
+  "homepage": "https://github.com/Mortem45/ClonInstagram-API#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-eslint": "^10.0.1",
+    "standard": "^12.0.1",
+    "test-listen": "^1.1.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "micro": "^9.3.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "uuid-base62": "^0.1.0"
+  }
+}
