@@ -36,6 +36,7 @@ hash.set('GET /:username', async function getUser (req, res, params) {
 
   send(res, 201, user)
 })
+
 export default async function main (req, res) {
   let { method, url } = req
   let match = hash.get(`${method.toUpperCase()} ${url}`)
