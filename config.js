@@ -1,3 +1,4 @@
 export default {
-  db: {}
+  db: {},
+  secret: process.env.CLONINSTA_SECRET || 'mortem' // no user default
 }
