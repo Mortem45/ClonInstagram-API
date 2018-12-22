@@ -4,18 +4,19 @@
   "description": "ClonInstagram REST API",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint && ava"
+    "test": "npm run lint && ava",
+    "start": "concurrently \"micro -p 5000 pictures.js\" \"micro -p 5001 users.js\" \"micro -p 5002 auth.js\""
   },
   "standard": {
     "parser": "babel-eslint"
   },
   "babel": {
     "presets": [
-      "@babel/preset-env"
+      "es2015"
     ],
     "plugins": [
-      "@babel/plugin-transform-runtime",
-      "@babel/plugin-transform-async-to-generator"
+      "transform-runtime",
+      "transform-async-to-generator"
     ]
   },
   "ava": {
@@ -23,7 +24,7 @@
       "test/**-test.js"
     ],
     "require": [
-      "@babel/register"
+      "babel-register"
     ],
     "NODE_ENV": "test"
   },
@@ -38,21 +39,23 @@
   },
   "homepage": "https://github.com/Mortem45/ClonInstagram-API#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-transform-async-to-generator": "^7.1.0",
-    "@babel/plugin-transform-runtime": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.1.6",
     "@babel/register": "^7.0.0",
     "ava": "^0.25.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.26.0",
+    "concurrently": "^4.1.0",
     "standard": "^12.0.1",
     "test-listen": "^1.1.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.2",
+    "gravatar": "^1.8.0",
     "http-hash": "^2.0.0",
     "jsonwebtoken": "^8.4.0",
-    "micro": "^9.3.3",
+    "micro": "^4.1.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "token-extractor": "^0.1.6",
