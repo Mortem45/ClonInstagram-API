@@ -4,7 +4,7 @@
   "description": "ClonInstagram REST API",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint && ava",
+    "test": "",
     "start": "concurrently \"micro -p 5000 pictures.js\" \"micro -p 5001 users.js\" \"micro -p 5002 auth.js\""
   },
   "standard": {
@@ -52,6 +52,7 @@
     "test-listen": "^1.1.0"
   },
   "dependencies": {
+    "cloninstagram-db": "file:../cloninstagram-db",
     "gravatar": "^1.8.0",
     "http-hash": "^2.0.0",
     "jsonwebtoken": "^8.4.0",

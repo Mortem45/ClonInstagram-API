@@ -3,15 +3,15 @@
 import { send, json } from 'micro'
 import HttpHash from 'http-hash'
 import Db from 'cloninstagram-db'
-//import DbStub from './test/stub/db'
+import DbStub from './test/stub/db'
 import config from './config'
 import gravatar from 'gravatar'
 
-//const env = process.env.NODE_ENV || 'production'
+const env = process.env.NODE_ENV || 'production'
 let db = new Db(config.db)
-/*if (env === 'test') {
+if (env === 'test') {
   db = new DbStub()
-}*/
+}
 
 const hash = HttpHash()
 
@@ -35,7 +35,7 @@ hash.set('GET /:username', async function getUser (req, res, params) {
 
   let images = await db.getImagesByUser(username)
   user.pictures = images
-  
+
   delete user.email
   delete user.password
 
